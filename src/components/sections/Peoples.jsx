@@ -28,8 +28,8 @@ const options = {
 
 const Peoples = () => {
     return (
-        <div className="lg:px-40 md:px-20 px-5 flex lg:flex-col md:flex-col flex-col-reverse">
-            <div className="space-y-3 text-center lg:mt-28 md:mt-10 mt-10 lg:w-1/2 md:w-1/2 w-auto mx-auto">
+        <div className="lg:px-40 md:px-20 px-5 flex lg:flex-col md:flex-col flex-col-reverse lg:mt-20 md:mt-20 mt-0">
+            <div className="space-y-3 text-center  lg:w-1/2 md:w-1/2 w-auto mx-auto lg:mt-0 md:mt-0 mt-6">
                     <p className="font-bold lg:text-base md:text-sm text-xs text-[#00d9de]">User Base of Our Website</p>
                     <h1 className="lg:text-3xl md:text-xl text-lg font-bold" data-aos="fade-down">Who Benefits from Our Platform</h1>
                     <p className="lg:text-sm md:text-xs text-xs text-gray-600 lg:text-center md:text-center text-justify" data-aos="fade-up">Discover the professionals thriving on our platform—whether you're a developer, corporate professional, banker, or part of any dynamic industry. Uncover success stories and join our community to find where you fit in the ecosystem of benefits our platform offers.</p>

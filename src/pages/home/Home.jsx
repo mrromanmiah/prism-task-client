@@ -1,5 +1,7 @@
 import Banner from "../../components/banner/Banner";
+import Clients from "../../components/sections/Clients";
 import FeatureOne from "../../components/sections/FeatureOne";
+import FeatureThree from "../../components/sections/FeatureThree";
 import FeatureTwo from "../../components/sections/FeatureTwo";
 import Peoples from "../../components/sections/Peoples";
 import Testimonial from "../../components/sections/Testimonial";
@@ -15,6 +17,8 @@ const Home = () => {
             <Peoples></Peoples>
             <FeatureTwo></FeatureTwo>
             <Testimonial></Testimonial>
+            <FeatureThree></FeatureThree>
+            <Clients></Clients>
         </div>
     );
 };
