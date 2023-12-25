@@ -7,6 +7,10 @@ import Login from "../pages/authentication/Login";
 import Register from "../pages/authentication/Register";
 import Dashboard from "../pages/dashboard/Dashboard";
 import MyTask from "../pages/dashboard/MyTask";
+import About from "../pages/navBarPages/About";
+import Features from "../pages/navBarPages/Features";
+import Pricing from "../pages/navBarPages/Pricing";
+import Contact from "../pages/navBarPages/Contact";
 
   export const router = createBrowserRouter([
     {
@@ -25,6 +29,22 @@ import MyTask from "../pages/dashboard/MyTask";
           path: '/register',
           element: <Register></Register>
       },
+      {
+          path: '/about',
+          element: <About></About>
+      },
+      {
+          path: '/features',
+          element: <Features></Features>
+      },
+      {
+          path: '/pricing',
+          element: <Pricing></Pricing>
+      },
+      {
+          path: '/contact',
+          element: <Contact></Contact>
+      },
       ],
     },
     {
@@ -34,7 +54,8 @@ import MyTask from "../pages/dashboard/MyTask";
           {
             path: '/dashboard/tasks',
             element: <MyTask></MyTask>
-        }
+        },
+        
         ]
     }
   ]);

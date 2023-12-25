@@ -1,13 +1,32 @@
-import { FaClipboardList, FaEnvelope, FaInfo, FaTasks } from "react-icons/fa";
+import { FaClipboardList, FaEnvelope, FaInfo, FaSignOutAlt, FaTasks } from "react-icons/fa";
 import { FaFileInvoiceDollar, FaHouse } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const Dashboard = () => {
-    const { user } = useAuth()
+    const navigate = useNavigate();
+    const { user, logOut } = useAuth()
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                Swal.fire(
+                    'Good job!',
+                    'Successfully logged out',
+                    'success'
+                )
+                navigate('/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
     return (
         <div className="lg:flex md:flex-none flex-none lg:m-0 m-4 gap-4">
             <div>
@@ -23,7 +42,7 @@ const Dashboard = () => {
                     <div className="drawer-side">
                         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                         <ul className="menu px-8 min-h-full bg-white">
-                            <div className="flex items-center my-4">
+                            <div className="flex items-center mt-4 mb-2">
                                 <img src="https://i.ibb.co/nRsCMpN/prism-Task-Logo.png" className="mr-3 h-8" alt="PrismTask Logo" />
                                 <span className="self-center whitespace-nowrap text-2xl text-black font-semibold"><span className='text-[#00d9de]'>Prism</span>Task</span>
                             </div>
@@ -52,6 +71,7 @@ const Dashboard = () => {
                             <li><Link to='/features'><FaClipboardList></FaClipboardList> Features</Link></li>
                             <li><Link to='/price'><FaFileInvoiceDollar></FaFileInvoiceDollar> Pricing</Link></li>
                             <li><Link to='/contact'><FaEnvelope></FaEnvelope> Contact</Link></li>
+                            <li><Link onClick={handleLogout} className="text-red-600 font-bold text-base mt-2 bg-gray-200 hover:bg-red-600 hover:text-white"><FaSignOutAlt></FaSignOutAlt> Logout</Link></li>
 
                         </ul>
 
@@ -59,7 +79,7 @@ const Dashboard = () => {
                 </div>
 
             </div>
-            <div className="bg-[url(https://i.ibb.co/RYbTRTF/10143811-18106012-1.jpg)] bg-cover lg:h-screen md:h-full h-full w-full">
+            <div className="h-full w-full">
 
                 <Outlet></Outlet>
             </div>
